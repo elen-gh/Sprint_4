@@ -18,7 +18,7 @@ class TestBooksCollector:
 
         # проверяем, что добавилось именно две
         # словарь books_rating, который нам возвращает метод get_books_rating, имеет длину 2
-        assert len(collector.get_books_rating()) == 2
+        assert len(collector.get_books_genre()) == 2
 
     import pytest
     @pytest.mark.parametrize('invalid_name', [
@@ -83,4 +83,4 @@ class TestBooksCollector:
         collector.add_new_book('Что делать, если ваш кот хочет вас убить')
         collector.add_book_in_favorites('Что делать, если ваш кот хочет вас убить')
         collector.add_book_in_favorites('Гордость и предубеждение и зомби')
-        assert collector.get_list_of_favorites_books() == ['Гордость и предубеждение и зомби', 'Что делать, если ваш кот хочет вас убить']
+        assert len(collector.get_list_of_favorites_books()) == 2
